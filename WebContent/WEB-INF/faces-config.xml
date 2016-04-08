@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config
+    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+    version="2.2">
+
+	<navigation-rule>
+		<display-name>login</display-name>
+		<from-view-id>/login.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>SUCCESS</from-outcome>
+			<to-view-id>/dbAccess.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>FAIL</from-outcome>
+			<to-view-id>/login.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>dbAccess</display-name>
+		<from-view-id>/dbAccess.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>viewTableColumns</from-outcome>
+			<to-view-id>/viewTableColumns.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>dbAccess</display-name>
+		<from-view-id>/dbAccess.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>logout</from-outcome>
+			<to-view-id>/login.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>fileExport</display-name>
+		<from-view-id>/fileExport.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>logout</from-outcome>
+			<to-view-id>/login.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>dbAccess</display-name>
+		<from-view-id>/dbAccess.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>viewTableColumns</from-outcome>
+			<to-view-id>/viewTableColumns.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>viewTableColumns</display-name>
+		<from-view-id>/viewTableColumns.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>numericalAnalysis</from-outcome>
+			<to-view-id>/numericalAnalysis.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<display-name>numericalAnalysis</display-name>
+		<from-view-id>/numericalAnalysis.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>viewTableColumns</from-outcome>
+			<to-view-id>/viewTableColumns.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+</faces-config>
